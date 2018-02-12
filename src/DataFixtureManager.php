@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace ZF\Doctrine\DataFixture;
 
@@ -56,9 +56,11 @@ class DataFixtureManager extends ServiceManager implements ObjectManagerAwareInt
      *
      * @return void
      */
-    public function setObjectManagerAlias(string $alias): void
+    public function setObjectManagerAlias(string $alias): DataFixtureManager
     {
         $this->objectManagerAlias = $alias;
+
+        return $this;
     }
 
     /**
@@ -78,8 +80,10 @@ class DataFixtureManager extends ServiceManager implements ObjectManagerAwareInt
      *
      * @return void
      */
-    public function setServiceLocator(ContainerInterface $serviceLocator): void
+    public function setServiceLocator(ContainerInterface $serviceLocator): DataFixtureManager
     {
         $this->serviceLocator = $serviceLocator;
+
+        return $this;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace ZF\Doctrine\DataFixture\Controller;
 
@@ -27,8 +27,7 @@ class ListControllerFactory implements FactoryInterface
 
         // If an object manager and group are specified include the data fixture manager
         if ($request->params()->get(1)) {
-            $dataFixtureManager
-                = $container->get(DataFixtureManager::class);
+            $dataFixtureManager = $container->get(DataFixtureManager::class);
         }
 
         $instance = new ListController(

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace ZF\Doctrine\DataFixture;
 
@@ -11,7 +11,6 @@ use Zend\ServiceManager\Factory\FactoryInterface;
 
 class DataFixtureManagerFactory implements FactoryInterface
 {
-
     /**
      * @inheritdoc
      */
@@ -41,7 +40,7 @@ class DataFixtureManagerFactory implements FactoryInterface
 
         // Load instance
         $objectManagerAlias
-                  = (string)$config['doctrine']['fixture'][$fixtureGroup]['object_manager'];
+            = (string)$config['doctrine']['fixture'][$fixtureGroup]['object_manager'];
         $instance = new DataFixtureManager(
             (array)$config['doctrine']['fixture'][$fixtureGroup]
         );

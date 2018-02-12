@@ -1,8 +1,6 @@
 <?php
-/**
- * @copyright 2018 Internalsystemerror Limited
- */
-declare(strict_types=1);
+
+declare(strict_types = 1);
 
 namespace ZF\Doctrine\DataFixture;
 
@@ -11,7 +9,6 @@ use Doctrine\Common\DataFixtures\Loader as DoctrineLoader;
 
 class Loader extends DoctrineLoader
 {
-
     /**
      * @var DataFixtureManager
      */

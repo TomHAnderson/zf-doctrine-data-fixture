@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace ZF\Doctrine\DataFixture;
 
@@ -16,7 +16,7 @@ class ConfigProvider
         return [
             'dependencies' => $this->getDependencies(),
             'controllers'  => $this->getControllerDependencyConfig(),
-            'console'      => [
+            'console' => [
                 'router' => $this->getConsoleRouterConfig(),
             ],
         ];

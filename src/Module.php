@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace ZF\Doctrine\DataFixture;
 
@@ -15,7 +15,6 @@ class Module implements
     AutoloaderProviderInterface,
     ConsoleUsageProviderInterface
 {
-
     /**
      * @inheritdoc
      */
@@ -23,11 +22,11 @@ class Module implements
     {
         return [
             'data-fixture:help'
-            => 'Data Fixtures Help',
+                => 'Data Fixtures Help',
             'data-fixture:list [<group>]'
-            => 'List Data Fixtures',
+                => 'List Data Fixtures',
             'data-fixture:import <group> [--append] [--purge-with-truncate]'
-            => 'Import Data Fixtures',
+                => 'Import Data Fixtures',
         ];
     }
 
@@ -36,12 +35,12 @@ class Module implements
      */
     public function getConfig(): array
     {
-        $configProvider = new ConfigProvider;
+        $configProvider = new ConfigProvider();
 
         return [
             'service_manager' => $configProvider->getDependencies(),
-            'controllers'     => $configProvider->getControllerDependencyConfig(),
-            'console'         => [
+            'controllers' => $configProvider->getControllerDependencyConfig(),
+            'console' => [
                 'router' => $configProvider->getConsoleRouterConfig(),
             ],
         ];

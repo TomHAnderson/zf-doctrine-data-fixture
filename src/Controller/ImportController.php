@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace ZF\Doctrine\DataFixture\Controller;
 
@@ -9,6 +9,7 @@ use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Zend\Mvc\Console\Controller\AbstractConsoleController;
 use ZF\Doctrine\DataFixture\DataFixtureManager;
 use ZF\Doctrine\DataFixture\Loader;
+use RuntimeException;
 
 class ImportController extends AbstractConsoleController
 {
@@ -35,11 +36,11 @@ class ImportController extends AbstractConsoleController
     public function importAction(): void
     {
         if ($this->params()->fromRoute('append')) {
-            throw new \RuntimeException('--append is now the default action');
+            throw new RuntimeException('--append is now the default action');
         }
 
         $loader = new Loader($this->dataFixtureManager);
-        $purger = new ORMPurger;
+        $purger = new ORMPurger();
 
         foreach ($this->dataFixtureManager->getAll() as $fixture) {
             $loader->addFixture($fixture);
@@ -55,7 +56,7 @@ class ImportController extends AbstractConsoleController
         );
         $executor->execute(
             $loader->getFixtures(),
-            (bool)!$this->params()->fromRoute('do-not-append')
+            (bool) ! $this->params()->fromRoute('do-not-append')
         );
     }
 }

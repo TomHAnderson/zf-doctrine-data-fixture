@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 namespace ZF\Doctrine\DataFixture\Controller;
 
@@ -11,7 +11,6 @@ use ZF\Doctrine\DataFixture\DataFixtureManager;
 
 class ListController extends AbstractConsoleController
 {
-
     /**
      * @var array
      */
@@ -45,29 +44,30 @@ class ListController extends AbstractConsoleController
     public function listAction(): void
     {
         if (!$this->dataFixtureManager) {
-            $this->getConsole()->write("All Fixture Groups\n", Color::RED);
+            $this->getConsole()->writeLine("All Fixture Groups", Color::RED);
 
             foreach ($this->config as $group => $smConfig) {
-                $this->getConsole()->write("$group\n", Color::CYAN);
+                $this->getConsole()->writeLine("$group", Color::CYAN);
             }
 
             return;
         }
 
         $this->getConsole()->write('Group: ', Color::YELLOW);
-        $this->getConsole()->write(
+        $this->getConsole()->writeLine(
             $this->params()
-                 ->fromRoute('fixture-group') . "\n",
+                 ->fromRoute('fixture-group'),
             Color::GREEN
         );
         $this->getConsole()->write('Object Manager: ', Color::YELLOW);
-        $this->getConsole()
-             ->write($this->dataFixtureManager->getObjectManagerAlias()
-                     . "\n", Color::GREEN);
+        $this->getConsole()->writeLine(
+             $this->dataFixtureManager->getObjectManagerAlias(),
+             Color::GREEN
+         );
 
         foreach ($this->dataFixtureManager->getAll() as $fixture) {
-            $this->getConsole()->write(
-                get_class($fixture) . "\n",
+            $this->getConsole()->writeLine(
+                get_class($fixture),
                 Color::CYAN
             );
         }
