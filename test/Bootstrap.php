@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ZFTest\Doctrine\DataFixture;
 
-use Zend\Loader\AutoloaderFactory;
+use Laminas\Loader\AutoloaderFactory;
 
 error_reporting(E_ALL | E_STRICT);
 chdir(__DIR__);
@@ -44,7 +44,7 @@ class Bootstrap
 
         require static::getZendPath($vendorPath) . '/Zend/Loader/AutoloaderFactory.php';
         AutoloaderFactory::factory([
-            'Zend\Loader\StandardAutoloader' => [
+            'Laminas\Loader\StandardAutoloader' => [
                 'autoregister_zf' => true,
                 'namespaces'      => [
                     'ZFTest\Doctrine\DataFixture' => __DIR__ . '/../src',

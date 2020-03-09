@@ -7,7 +7,7 @@ namespace ZF\Doctrine\DataFixture;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use DoctrineModule\Persistence\ObjectManagerAwareInterface;
 use DoctrineModule\Persistence\ProvidesObjectManager;
-use Zend\ServiceManager\AbstractPluginManager;
+use Laminas\ServiceManager\AbstractPluginManager;
 
 class DataFixtureManager extends AbstractPluginManager implements ObjectManagerAwareInterface
 {
